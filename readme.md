@@ -38,11 +38,11 @@ property-search-chatbot/
 
 ### 1. **Query Parser** (`query_parser.py`)
 - Uses regex patterns to extract:
-  - City: Mumbai, Pune, etc.
-  - BHK: 1BHK, 2BHK, 3BHK, etc.
-  - Budget: "under 2 Cr", "below 80 lakh"
-  - Status: "ready to move", "under construction"
-  - Locality: Chembur, Baner, Wakad, etc.
+- City: Mumbai, Pune, etc.
+- BHK: 1BHK, 2BHK, 3BHK, etc.
+- Budget: "under 2 Cr", "below 80 lakh"
+- Status: "ready to move", "under construction"
+- Locality: Chembur, Baner, Wakad, etc.
 
 ### 2. **Search Engine** (`search_engine.py`)
 - Applies filters to Pandas DataFrame
