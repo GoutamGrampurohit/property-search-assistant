@@ -34,32 +34,6 @@ property-search-chatbot/
 └── README.md
 ```
 
-## 🔧 How It Works
-
-### 1. **Query Parser** (`query_parser.py`)
-- Uses regex patterns to extract:
-- City: Mumbai, Pune, etc.
-- BHK: 1BHK, 2BHK, 3BHK, etc.
-- Budget: "under 2 Cr", "below 80 lakh"
-- Status: "ready to move", "under construction"
-- Locality: Chembur, Baner, Wakad, etc.
-
-### 2. **Search Engine** (`search_engine.py`)
-- Applies filters to Pandas DataFrame
-- Handles missing data gracefully
-- Implements fallback search (relaxes filters if no results)
-- Sorts and deduplicates results
-
-### 3. **Summarizer** (`summarizer.py`)
-- Generates fact-based summaries from data
-- Creates formatted property cards
-- Handles edge cases (no results, expanded search)
-
-### 4. **Data Loader** (`data_loader.py`)
-- Merges 4 CSV files into single DataFrame
-- Cleans and standardizes data
-- Converts prices to Crores
-- Extracts BHK from configuration types
 
 ## 📊 Data Schema
 
@@ -76,3 +50,39 @@ The system expects these CSV columns:
 
 ### `ProjectAddress.csv`
 - `projectId`, `landmark`, `fullAddress`, `pincode`
+
+  ## 🔧 How It Works
+
+### 1. **Query Parser**
+- Uses regex patterns to extract:
+- City: Mumbai, Pune, etc.
+- BHK: 1BHK, 2BHK, 3BHK, etc.
+- Budget: "under 2 Cr", "below 80 lakh"
+- Status: "ready to move", "under construction"
+- Locality: Chembur, Baner, Wakad, etc.
+
+### 2. **Search Engine**
+- Applies filters to Pandas DataFrame
+- Handles missing data gracefully
+- Implements fallback search (relaxes filters if no results)
+- Sorts and deduplicates results
+
+### 3. **Summarizer**
+- Generates fact-based summaries from data
+- Creates formatted property cards
+- Handles edge cases (no results, expanded search)
+
+### 4. **Data Loader**
+- Merges 4 CSV files into single DataFrame
+- Cleans and standardizes data
+- Converts prices to Crores
+- Extracts BHK from configuration types
+
+## Output Geneeration:
+### Property card with:
+- Property Title
+- 📍 Property Location
+- 🛏️ Configuration Property
+- 📏 Carpet Area
+- 🏗️ Property Status(Under construction/Completed)
+
